@@ -105,6 +105,7 @@ if (respuesta == 2) {
 
 //let respuestaUno = prompt("¿quieres seguir hacia el área de Front-End, hacia el área de Back-End o prefieres seguir hacia el área Fullstack?");
 
+/*
 function preguntaUno () {
   respuestaUno = prompt("¿quieres seguir hacia el área de Front-End, hacia el área de Back-End o prefieres seguir hacia el área Fullstack?");
 }
@@ -131,4 +132,111 @@ function preguntaAdicional () {
     respuestaCuatro = prompt("¿Escribe que tecnologías te gustaría aprender?");
   }
 } 
+*/
 
+
+//otra solución para el día 3
+/*
+const area = prompt("¿Quieres seguir en el área de 'Front-End' o 'Back-End'? Escribe el nombre del área:");
+let lenguaje = "";
+if (area === "Front-End") {
+    lenguaje = prompt("¿Quieres aprender React o Vue?");
+} else if (area === "Back-End") {
+    lenguaje = prompt("¿Quieres aprender C# o Java?");
+} else {
+    alert("¡No ingresaste un área válida!");
+}
+
+const especialidadOFullstack = prompt("Escribe 1 para seguir especializándote en el área elegida o 2 para desarrollarte para convertirte en Fullstack");
+if (especialidadOFullstack == 1) {
+    alert(`¡Sigue especializándote en ${lenguaje} para dominar el área de ${area}!`);
+} else if (especialidadOFullstack == 2) {
+    alert(`¡Es hora de comenzar a aprender otros lenguajes además de ${lenguaje} si quieres convertirte en Fullstack!`);
+} else {
+    alert("¡No ingresaste un valor válido!");
+}
+
+let mensaje = prompt("¿Hay alguna otra tecnología que te gustaría aprender? Escribe 'ok' en caso positivo.");
+while (mensaje === "ok") {
+    let nuevaTecnología = prompt("¿Cuál?");
+    alert(`¡${nuevaTecnología} es realmente una tecnología muy interesante!`);
+    mensaje = prompt("¿Hay alguna otra tecnología que te gustaría aprender? Escribe 'ok' en caso positivo.");
+}
+*/
+
+//Dia 4
+/*Debes crear un pequeño programa que comience con un valor específico predefinido entre 0 y 10 para el número que vas a adivinar (por ejemplo, el 7).
+
+A continuación, el programa te preguntará cuál es el valor que deseas adivinar y, si aciertas, te felicitará. Si te equivocas, te dará 2 intentos más.
+
+Al final, si no aciertas en ninguno de los intentos, imprimirá cuál era el número inicial.
+
+Después de que el programa esté funcionando, intenta usar un número aleatorio en lugar de uno predefinido.
+*/
+
+let numeroSecreto = 0;
+let intentos = 0;
+let numeroMaximo = 10;
+
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
+}
+
+function verificarIntento() {
+    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
+    
+    if (numeroDeUsuario === numeroSecreto) {
+        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
+        document.getElementById('reiniciar').removeAttribute('disabled');
+    } else {
+        //El usuario no acertó.
+        if (numeroDeUsuario > numeroSecreto) {
+            asignarTextoElemento('p','El número secreto es menor');
+        } else {
+            asignarTextoElemento('p','El número secreto es mayor');
+        } 
+        intentos++;
+        limpiarCaja();
+
+        //se acabaron los intentos permitidos
+        if (intentos >= 4){
+          asignarTextoElemento('p',`Se acabaron tus intentos, el número secreto era: ${numeroSecreto}`);
+          document.getElementById('reiniciar').removeAttribute('disabled');
+        }
+
+    }
+    return;
+}
+
+function limpiarCaja() {
+    document.querySelector('#valorUsuario').value = '';
+}
+
+function generarNumeroSecreto() {
+    let numeroGenerado =  Math.floor(Math.random()*numeroMaximo)+1;
+    return numeroGenerado;
+
+}
+
+function condicionesIniciales() {
+    asignarTextoElemento('h1','Juego del número secreto!');
+    asignarTextoElemento('p',`Indica un número del 1 al ${numeroMaximo}`);
+    numeroSecreto = generarNumeroSecreto();
+    intentos = 1;
+    console.log(numeroSecreto);
+}
+
+function reiniciarJuego() {
+    //limpiar caja
+    limpiarCaja();
+    //Generar el número aleatorio
+    //Inicializar el número intentos
+    condicionesIniciales();
+    //Deshabilitar el botón de nuevo juego
+    document.querySelector('#reiniciar').setAttribute('disabled','true');
+    
+}
+
+condicionesIniciales();

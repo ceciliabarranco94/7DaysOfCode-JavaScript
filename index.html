@@ -6,23 +6,35 @@
     <title>7DaysOfCode</title>
 </head>
 <body>
+    <main>7 Days of code</main>
+    <h1>Desafíos en JavasSript</h1>
     <!--Poner boton para recargar pagina y salgan los prompts de nuevo-->
         <section>
-            <div class="input-wrapper">
-                <button class="button-add" onclick="preguntaUno()">Elige un camino ninja</button>
-            </div>
+            <h2>Día 3</h2>
+                <div class="input-wrapper">
+                    <button class="button-add" onclick="preguntaUno()">Elige un camino ninja</button>
+                </div>
+
+                <div class="input-wrapper">
+                    <button class="button-add" onclick="preguntaDos()">Descubir</button>
+                </div>
+
+                <div class="input-wrapper">
+                    <button class="button-add" onclick="preguntaAdicional()">Otra pregunta</button>
+                </div>
         </section>
 
         <section>
-            <div class="input-wrapper">
-                <button class="button-add" onclick="preguntaDos()">Descubir</button>
-            </div>
-        </section>
-
-        <section>
-            <div class="input-wrapper">
-                <button class="button-add" onclick="preguntaAdicional()">Otra pregunta</button>
-            </div>
+            <h2>Día 4</h2>
+                <div class="container__texto">
+                    <h3></h3>
+                    <p class="texto__parrafo"></p>
+                </div>
+                <input type="number" id="valorUsuario" min="1" max="10" class="container__input">
+                <div class="chute container__botones">
+                    <button onclick="verificarIntento();" class="container__boton">Intentar</button>
+                    <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>Nuevo juego</button>
+                </div>
         </section>
     <script src="./7DaysOfCode.js" defer></script>
 </body>
