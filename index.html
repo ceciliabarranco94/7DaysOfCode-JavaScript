@@ -8,7 +8,7 @@
 <body>
     <main>7 Days of code</main>
     <h1>Desafíos en JavaSript</h1>
-    <!--Poner boton para recargar pagina y salgan los prompts de nuevo-->
+    <!--Botones para desafíos-->
         <section>
             <h2>Día 3</h2>
                 <div class="input-wrapper">
@@ -35,6 +35,26 @@
                     <button onclick="verificarIntento();" class="container__boton">Intentar</button>
                     <button onclick="reiniciarJuego();" class="container__boton" id="reiniciar" disabled>Nuevo juego</button>
                 </div>
+        </section>
+
+        <section class="input-section">
+            <h2>Día 5</h2>
+            <div class="input-wrapper">
+                <h3>Lista de compras</h3>
+                <!--<input type="text" id="elemento" class="input-name" placeholder="Anota que comprarás">
+                <button class="button-add" onclick="agregarElemento()">Añadir</button>
+                <input type="text" id="elementoArea" class="input-name" placeholder="Donde lo encuentras?">
+                <button class="button-add" onclick="agregarElemento()">Clasificar</button>-->
+            </div>
+           
+            <ul id="listaCompras" class="name-list" aria-labelledby="listaCompras" role="list"></ul>
+            <ul id="resultado" class="result-list" aria-live="polite"></ul>
+
+            <!--Botones para desafíos<div class="button-container">
+                <button class="button-draw" onclick="sortearAmigo()" aria-label="Mostras lista de compras">
+                    Mostrar lista
+                </button>
+            </div>-->
         </section>
     <script src="./7DaysOfCode.js" defer></script>
 </body>

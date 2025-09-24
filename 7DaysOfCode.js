@@ -105,7 +105,7 @@ if (respuesta == 2) {
 
 //let respuestaUno = prompt("¿quieres seguir hacia el área de Front-End, hacia el área de Back-End o prefieres seguir hacia el área Fullstack?");
 
-/*
+
 function preguntaUno () {
   respuestaUno = prompt("¿quieres seguir hacia el área de Front-End, hacia el área de Back-End o prefieres seguir hacia el área Fullstack?");
 }
@@ -126,13 +126,13 @@ function preguntaDos () {
 
 function preguntaAdicional () {
   respuestaTres = prompt("¿Hay alguna otra tecnología que te gustaría aprender?");
-  if (respuestaTres == "no") {
+  if (respuestaTres == "no" || respuestaTres == "NO") {
     alert("oki")
   } else {
     respuestaCuatro = prompt("¿Escribe que tecnologías te gustaría aprender?");
   }
 } 
-*/
+
 
 
 //otra solución para el día 3
@@ -240,3 +240,130 @@ function reiniciarJuego() {
 }
 
 condicionesIniciales();
+
+//otra solución para el día 4
+/*const numeroAdivinacion = Math.floor(Math.random() * (10 - 0 + 1) + 0);
+let intento = "";
+let acerto = false;
+
+for(let contador = 0; contador < 3; contador++){    
+    intento = prompt("Intenta adivinar el número del 0 al 10:");
+    if(intento == numeroAdivinacion){
+        alert(`¡Felicidades, acertaste! El número era ${numeroAdivinacion}.`);
+        acerto = true;
+        break;
+    }
+    alert("¡Incorrecto!");
+}
+if(!acerto){
+    alert(`Desafortunadamente, no acertaste. ¡El número era ${numeroAdivinacion}!`);
+}*/
+
+
+//Dia 5
+/*
+1.debes crear un programa en Javascript que pregunte si deseas agregar un alimento a tu lista de compras, y debes poder responder con "sí" o "no".
+2. A continuación, preguntará qué alimento deseas agregar, y escribirás su nombre, como por ejemplo "zanahoria".
+3. Después, deberá preguntar en qué categoría se encaja ese alimento, con algunas opciones ya predefinidas, como frutas, lácteos, congelados, dulces y lo que más creas interesante. Así podrás separar todo en su respectivo grupo.
+4. Por último, en caso de que ya no quieras agregar nada más a la lista de compras y respondas "no" a la primera pregunta, se mostrará una lista con todos los ítems agrupados, de la siguiente manera:
+
+Si añades a tu lista:
+banana, leche en polvo, tomate, leche vegetal, chicle, gominola, manzana, uva, aguacate y leche de vaca.
+
+El programa debería imprimir, por ejemplo:
+
+Lista de compras:
+Frutas: banana, tomate, manzana, uva, aguacate
+Lácteos: leche vegetal, leche de vaca, leche en polvo
+Congelados: 
+Dulces: chicle y gominola
+*/
+
+let listaPrueba = [];
+
+let listaSuper = prompt("¿Deseas agregar un alimento a tu lista de compras?")
+
+// Recorrer el array con un bucle for para agregarlos a la lista uno por uno
+  if(listaSuper == "si"){
+  alimento = prompt("qué alimento deseas agregar");
+  alimentoCategoria = prompt("en qué categoría se encaja ese alimento");
+  } else{
+    prompt("weno");
+  }
+
+listaPrueba.push(alimento);
+console.log(listaPrueba)
+
+
+/*let frutas = [];
+let lacteos = [];
+let congelados = [];
+let dulces = [];
+let otros = [];
+let listaPrueba = [];
+
+function agregarElemento(){
+    //obtener elemento desde el input elemento de html
+    let elementoLista = document.getElementById('elemento').value;
+    let ubicacionElemento = document.getElementById('elementoArea').value;
+
+    //validar entrada de elemento
+    if (elementoLista == "") {
+      alert("Por favor, escribe que comprarás.");
+    } else if(ubicacionElemento == "frutas"){
+      console.log(elementoLista);
+    }
+        /*prompt("En que área encuentras el elemento ingresado");
+        listaPrueba.push(ubicacionElemento);
+        console.log(listaPrueba);
+        mostrarListaEnHtml();
+        if (ubicacionElemento == "frutas"){
+          frutas.push(elemento);
+          console.log(frutas);
+          mostrarListaEnHtml();
+        } /*else if(ubicacionElemento == "lacteos"){
+          lacteos.push(elemento);
+          console.log(lacteos);
+          mostrarListaEnHtml();
+        } else if(ubicacionElemento == "congelados"){
+          congelados.push(elemento);
+          console.log(congelados);
+          mostrarListaEnHtml();
+        } else if(ubicacionElemento == "dulces"){
+          dulces.push(elemento);
+          console.log(dulces);
+          mostrarListaEnHtml();
+        } else {
+          otros.push(elemento);
+          console.log(otros);
+          mostrarListaEnHtml();
+        }*/
+    //limpiarCaja();
+
+
+/*function limpiarCaja() {
+    document.querySelector('#elemento').value = '';
+}
+
+function mostrarListaEnHtml(){
+    //Obtener el elemento de la lista html y asignarle una variable
+    let listaDelSuper = document.getElementById('listaCompras');
+    //Limpiar la lista existente para evitar agregar participantes ya ingresados
+    listaDelSuper.innerHTML = "";
+
+    // Recorrer el array listaPrueba con un bucle for para agregarlos a la lista uno por uno
+    for (let i = 0; i < listaPrueba.length; i++) {
+        let li = document.createElement("li"); // Crear <li> de html
+        li.textContent = listaPrueba[i]; // Asignar texto
+        listaDelSuper.appendChild(li); // Agregarlo al <ul> de html
+    }
+
+    // Recorrer el array frutas con un bucle for para agregarlos a la lista uno por uno
+    for (let i = 0; i < frutas.length; i++) {
+        let li = document.createElement("li"); // Crear <li> de html
+        li.textContent = frutas[i]; // Asignar texto
+        listaDelSuper.appendChild(li); // Agregarlo al <ul> de html
+    }
+}
+*/
+
