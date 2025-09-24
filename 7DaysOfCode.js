@@ -113,12 +113,12 @@ function preguntaUno () {
 function preguntaDos () {
     if (respuestaUno == "Front-End") {
     respuestaDos = prompt("¿quieres aprender React o aprender Vue?")
-    alert("Suerte en tu camino Front-End")
+    alert(`Suerte en tu camino Front-End con ${respuestaDos}`)
     } else if (respuestaUno == "Back-End") {
       respuestaDos = prompt("¿quieres aprender C# o Java")
-      alert("Suerte en tu camino Back-End")  
+      alert(`Suerte en tu camino Back-End con ${respuestaDos}`)  
     } else if (respuestaUno == "Fullstack"){
-      alert("Suerte en tu camino Fullstack")
+      alert(`Suerte en tu camino Fullstack`)
     } else {
       alert("Elige un camino ninja válido")
     }
@@ -262,7 +262,7 @@ if(!acerto){
 
 //Dia 5
 /*
-1.debes crear un programa en Javascript que pregunte si deseas agregar un alimento a tu lista de compras, y debes poder responder con "sí" o "no".
+1. Debes crear un programa en Javascript que pregunte si deseas agregar un alimento a tu lista de compras, y debes poder responder con "sí" o "no".
 2. A continuación, preguntará qué alimento deseas agregar, y escribirás su nombre, como por ejemplo "zanahoria".
 3. Después, deberá preguntar en qué categoría se encaja ese alimento, con algunas opciones ya predefinidas, como frutas, lácteos, congelados, dulces y lo que más creas interesante. Así podrás separar todo en su respectivo grupo.
 4. Por último, en caso de que ya no quieras agregar nada más a la lista de compras y respondas "no" a la primera pregunta, se mostrará una lista con todos los ítems agrupados, de la siguiente manera:
@@ -291,7 +291,7 @@ let listaSuper = prompt("¿Deseas agregar un alimento a tu lista de compras?")
     prompt("weno");
   }
 
-listaPrueba.push(alimento);
+listaPrueba.push(listaPrueba);
 console.log(listaPrueba)
 
 
