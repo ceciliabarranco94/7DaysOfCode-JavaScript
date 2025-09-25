@@ -279,8 +279,53 @@ Congelados:
 Dulces: chicle y gominola
 */
 
-let listaPrueba = [];
+let frutas = [];
+let lacteos = [];
+let congelados = [];
+let dulces = [];
+let articuloSuper = "";
+let categoria = "";
 
+function agregarArticulo(){
+  //cuando aprieto boton añadir empiezan las preguntas
+  // valor inicial como "sí", porque la primera vez siempre va a entrar en el while
+  let agregarMas = "si";  
+  
+  while(agregarMas != "no"){
+    agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'si' o 'no'.");
+    //mientras el texto leído sea diferente de "sí" y de "no", mostrar que no fue reconocido y preguntar nuevamente
+    while (agregarMas != "si" && agregarMas != "no") {  
+	  alert("¡Operación no reconocida!");
+        agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'sí' o 'no'.");
+    }
+    
+    //si el texto leído es "no", salir del while
+    if (agregarMas === "no"){  
+        break;
+    }
+	
+    articuloSuper = prompt("¿Qué comida deseas agregar?");
+    categoria = prompt("¿En qué categoria encaja esta comida: 'frutas', 'lacteos', 'dulces' o 'congelados'?");
+    if(categoria === 'frutas'){
+        frutas.push(articuloSuper);
+    } else if (categoria === 'lacteos'){
+        lacteos.push(articuloSuper);
+    } else if (categoria === 'dulces'){
+        dulces.push(articuloSuper);
+    } else if (categoria === 'congelados'){
+        congelados.push(articuloSuper);
+    } else {
+        alert("Esa categoria no está predefinida.")
+    }
+  }
+  alert(`Lista de compras:\n  Frutas: ${frutas}\n  Lácteos: ${lacteos}\n  Dulces: ${dulces}\n  Congelados: ${congelados}`);
+}
+
+//**********************************PRUEBAS DESAFIO 5*******************/
+
+//solución prueba
+/*
+let listaPrueba = [];
 let listaSuper = prompt("¿Deseas agregar un alimento a tu lista de compras?")
 
 // Recorrer el array con un bucle for para agregarlos a la lista uno por uno
@@ -293,16 +338,9 @@ let listaSuper = prompt("¿Deseas agregar un alimento a tu lista de compras?")
 
 listaPrueba.push(listaPrueba);
 console.log(listaPrueba)
+*/
 
-
-/*let frutas = [];
-let lacteos = [];
-let congelados = [];
-let dulces = [];
-let otros = [];
-let listaPrueba = [];
-
-function agregarElemento(){
+/*function agregarElemento(){
     //obtener elemento desde el input elemento de html
     let elementoLista = document.getElementById('elemento').value;
     let ubicacionElemento = document.getElementById('elementoArea').value;
@@ -366,4 +404,5 @@ function mostrarListaEnHtml(){
     }
 }
 */
+
 
