@@ -69,7 +69,7 @@ alert(msg);
 
 /* EJERCICIO OPCIONAL:
 Vas a complementar el código para que, después de mostrar el mensaje anterior, el programa pregunte:
-¿Te gusta estudiar [lenguaje]? Responde con el número 1 para SÍ o 2 para NO.
+¿Te gusta estudiar [lenguaje]? Responde con el número 1 para si o 2 para NO.
 
 Y luego, dependiendo de la respuesta, debería mostrar uno de los siguientes mensajes:
 
@@ -78,7 +78,7 @@ Y luego, dependiendo de la respuesta, debería mostrar uno de los siguientes men
 */
 
 /*
-const respuesta = prompt(`¿Te gusta estudiar ${lenguajeProgamacion}? Responde con el número 1 para SÍ o 2 para NO.`);
+const respuesta = prompt(`¿Te gusta estudiar ${lenguajeProgamacion}? Responde con el número 1 para si o 2 para NO.`);
 
 if (respuesta == 1) {
     // da la respuesta positiva
@@ -262,9 +262,9 @@ if(!acerto){
 
 //Dia 5
 /*
-1. Debes crear un programa en Javascript que pregunte si deseas agregar un alimento a tu lista de compras, y debes poder responder con "sí" o "no".
+1. Debes crear un programa en Javascript que pregunte si deseas agregar un alimento a tu lista de compras, y debes poder responder con "si" o "no".
 2. A continuación, preguntará qué alimento deseas agregar, y escribirás su nombre, como por ejemplo "zanahoria".
-3. Después, deberá preguntar en qué categoría se encaja ese alimento, con algunas opciones ya predefinidas, como frutas, lácteos, congelados, dulces y lo que más creas interesante. Así podrás separar todo en su respectivo grupo.
+3. Después, deberá preguntar en qué categoría se encaja ese alimento, con algunas opciones ya predefinidas, como frutas, lácteos, congelados, dulces y lo que más creas interesante. Asi podrás separar todo en su respectivo grupo.
 4. Por último, en caso de que ya no quieras agregar nada más a la lista de compras y respondas "no" a la primera pregunta, se mostrará una lista con todos los ítems agrupados, de la siguiente manera:
 
 Si añades a tu lista:
@@ -279,7 +279,7 @@ Congelados:
 Dulces: chicle y gominola
 */
 
-let frutas = [];
+/*let frutas = [];
 let lacteos = [];
 let congelados = [];
 let dulces = [];
@@ -288,15 +288,15 @@ let categoria = "";
 
 function agregarArticulo(){
   //cuando aprieto boton añadir empiezan las preguntas
-  // valor inicial como "sí", porque la primera vez siempre va a entrar en el while
+  // valor inicial como "si", porque la primera vez siempre va a entrar en el while
   let agregarMas = "si";  
   
   while(agregarMas != "no"){
     agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'si' o 'no'.");
-    //mientras el texto leído sea diferente de "sí" y de "no", mostrar que no fue reconocido y preguntar nuevamente
+    //mientras el texto leído sea diferente de "si" y de "no", mostrar que no fue reconocido y preguntar nuevamente
     while (agregarMas != "si" && agregarMas != "no") {  
 	  alert("¡Operación no reconocida!");
-        agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'sí' o 'no'.");
+        agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'si' o 'no'.");
     }
     
     //si el texto leído es "no", salir del while
@@ -317,10 +317,11 @@ function agregarArticulo(){
     } else {
         alert("Esa categoria no está predefinida.")
     }
+    
   }
   alert(`Lista de compras:\n  Frutas: ${frutas}\n  Lácteos: ${lacteos}\n  Dulces: ${dulces}\n  Congelados: ${congelados}`);
   //document.querySelector('#eliminar').setAttribute('disabled','true');
-}
+}/*
 
 //**********************************PRUEBAS DESAFIO 5*******************/
 
@@ -422,6 +423,96 @@ Por ejemplo: “¡No fue posible encontrar el elemento en la lista!”.
 Recuerda que la opción de eliminar un elemento solo deberá estar disponible a partir del momento en que exista al menos un elemento en la lista de compras.
 */ 
 
-function elimnarArticulo(){
-  alert("articulo eliminado")
+/*function elimnarArticulo(){
+  //alert("articulo eliminado")
+  if(agregarMas === "eliminar"){
+  //si la lista está vacía 
+  // (tratamiento de bug, en caso de que la persona escriba "eliminar" incluso cuando solo se muestren las opciones "si" y "no")
+	if(frutas.length === 0 && lacteos.length === 0 && dulces.length === 0 && congelados.length === 0){  
+		alert(`¡La lista está vacía!`);
+	} else {  //si la lista no está vacía
+		eliminar = prompt(`Lista de compras:\n  Frutas: ${frutas}\n  Lácteos: ${lacteos}\n  Dulces: ${dulces}\n  Congelados: ${congelados}\n\n¿Qué producto deseas eliminar?`);
+		if(frutas.indexOf(eliminar) != -1){
+			frutas.splice(frutas.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else if(lacteos.indexOf(eliminar) != -1){
+			lacteos.splice(lacteos.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else if (dulces.indexOf(eliminar) != -1){
+			dulces.splice(dulces.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else if (congelados.indexOf(eliminar) != -1){
+			congelados.splice(congelados.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else {
+			alert(`¡No fue posible encontrar el ítem dentro de la lista!`)
+		}
+	}
+    }
 }
+*/
+let frutas = [];
+let lacteos = [];
+let dulces = [];
+let congelados = [];
+let comida = "";
+let categoria = "";
+let eliminar = "";
+
+// valor inicial como "si", porque la primera vez siempre va a entrar en el while
+let agregarMas = "si";  
+while(agregarMas != "no"){
+    if(frutas.length === 0 && lacteos.length === 0 && dulces.length === 0 && congelados.length === 0){
+        agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'si' o 'no'.");
+    } else {
+        agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'si', 'no' o 'eliminar'.");
+    }
+	  //mientras el texto leído sea diferente de "si", "no" y "eliminar", mostrar que no fue reconocido y preguntar nuevamente
+    while (agregarMas != "si" && agregarMas != "no" && agregarMas != "eliminar") {  
+	alert(`¡Operación no reconocida!`);
+        agregarMas = prompt("¿Deseas agregar una comida a la lista de compras? Responde 'si' o 'no'.");
+    }
+    //si el texto leído es "no", salir del while
+    if (agregarMas === "no"){  
+      break;
+    }
+	
+    if(agregarMas === "si"){
+        comida = prompt("¿Qué comida deseas agregar?");
+        categoria = prompt("¿En qué categoría encaja esta comida: 'frutas', 'lacteos', 'dulces' o 'congelados'?");
+        if(categoria === 'frutas'){
+            frutas.push(comida);
+        } else if (categoria === 'lacteos'){
+            lacteos.push(comida);
+        } else if (categoria === 'dulces'){
+            dulces.push(comida);
+        } else if (categoria === 'congelados'){
+            congelados.push(comida);
+        } else {
+            alert("Esa categoria no está predefinida.")
+        }
+    } else if(agregarMas === "eliminar"){
+	if(frutas.length === 0 && lacteos.length === 0 && dulces.length === 0 && congelados.length === 0){  
+    //si la lista está vacía (tratamiento de bug, en caso de que la persona escriba "eliminar" incluso cuando solo se muestren las opciones "si" y "no")
+		alert(`¡La lista está vacía!`);
+	} else {  //si la lista no está vacía
+		eliminar = prompt(`Lista de compras:\n  Frutas: ${frutas}\n  Lácteos: ${lacteos}\n  Dulces: ${dulces}\n  Congelados: ${congelados}\n\n¿Qué producto deseas eliminar?`);
+		if(frutas.indexOf(eliminar) != -1){
+			frutas.splice(frutas.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else if(lacteos.indexOf(eliminar) != -1){
+			lacteos.splice(lacteos.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else if (dulces.indexOf(eliminar) != -1){
+			dulces.splice(dulces.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else if (congelados.indexOf(eliminar) != -1){
+			congelados.splice(congelados.indexOf(eliminar), 1);
+			alert(`¡El ítem ${eliminar} ha sido eliminado con éxito!`)
+		} else {
+			alert(`¡No fue posible encontrar el ítem dentro de la lista!`)
+		}
+	}
+    }
+}
+alert(`Lista de compras:\n  Frutas: ${frutas}\n  Lácteos: ${lacteos}\n  Dulces: ${dulces}\n  Congelados: ${congelados}`);
