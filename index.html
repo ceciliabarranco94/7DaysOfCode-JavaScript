@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7DaysOfCode</title>
+    <title>7DaysOfCode-js</title>
 </head>
 <body>
     <main>7 Days of code</main>
     <h1>Desafíos en JavaSript</h1>
     <!--Botones para desafíos-->
         <section>
-            <h2>Día 3</h2>
+            <h2>Día 3: Caminos ninja de la programación</h2>
                 <div class="input-wrapper">
                     <button class="button-add" onclick="preguntaUno()">Elige un camino ninja</button>
                 </div>
@@ -25,7 +25,7 @@
         </section>
 
         <section>
-            <h2>Día 4</h2>
+            <h2>Día 4: Juego del número secreto</h2>
                 <div class="container__texto">
                     <h3></h3>
                     <p class="texto__parrafo"></p>
@@ -38,9 +38,9 @@
         </section>
 
         <section class="input-section">
-            <h2>Día 5 / Día 6</h2>
+            <h2>Día 5 / Día 6: Lista de compras</h2>
             <div class="input-wrapper">
-                <h3>Lista de compras</h3>
+                <h3>Crea tu lista de compras</h3>
                 <input type="text" id="elemento" class="input-name" placeholder="Anota que comprarás">
                 <button class="button-add" onclick="agregarArticulo()">Añadir</button>
                 <!--agregar lo de disabled-->
@@ -58,6 +58,23 @@
                 </button>
             </div>-->
         </section>
+
+        <section>
+            <h2>Día 7: Calculadora</h2>
+                <div class="container__texto">
+                    <h3>¿Qué operación realizarás?</h3>
+                    <p class="texto__parrafo"></p>
+                </div>
+                
+                <div class="input-wrapper">
+                    <button onclick="calculadoraSuma();" class="calculadora__botones">Suma</button>
+                    <button onclick="calculadoraResta();" class="calculadora__botones">Resta</button>
+                    <button onclick="calculadoraMult();" class="calculadora__botones">Multiplicación</button>
+                    <button onclick="calculadoraDiv();" class="calculadora__botones">División</button>
+                </div>
+
+        </section>
+
     <script src="./7DaysOfCode.js" defer></script>
 </body>
 </html>

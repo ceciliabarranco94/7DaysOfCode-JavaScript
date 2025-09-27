@@ -221,7 +221,7 @@ function generarNumeroSecreto() {
 }
 
 function condicionesIniciales() {
-    asignarTextoElemento('h3','Juego del número secreto!');
+    asignarTextoElemento('h3','¡Adivina el número secreto!');
     asignarTextoElemento('p',`Indica un número del 1 al ${numeroMaximo}`);
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
@@ -451,7 +451,8 @@ Recuerda que la opción de eliminar un elemento solo deberá estar disponible a 
     }
 }
 */
-let frutas = [];
+
+/*let frutas = [];
 let lacteos = [];
 let dulces = [];
 let congelados = [];
@@ -516,3 +517,28 @@ while(agregarMas != "no"){
     }
 }
 alert(`Lista de compras:\n  Frutas: ${frutas}\n  Lácteos: ${lacteos}\n  Dulces: ${dulces}\n  Congelados: ${congelados}`);
+*/
+
+//Dia 7
+/*
+Crea tu propia calculadora, pero con un detalle muy importante: cada operación debe ser una función 
+diferente en tu código.
+1. Primero, la persona debe elegir una opción de operación impresa por el programa en la pantalla.
+2. Luego, debe ingresar los dos valores que desea utilizar, y el programa imprimirá el resultado de 
+  la operación en cuestión.
+3. Las opciones disponibles deben ser: suma, resta, multiplicación, división, y salir. 
+  En esta última, el programa debe detenerse y       mostrar un mensaje "Hasta la próxima".
+*/ 
+
+function calculadoraSuma(){
+  alert("SUMA!")
+}
+function calculadoraResta(){
+  alert("RESTA!")
+}
+function calculadoraMult(){
+  alert("MULTIPLICACIÓN!")
+}
+function calculadoraDiv(){
+  alert("DIVISIÓN!")
+}
